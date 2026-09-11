@@ -4,7 +4,7 @@ Non servono nuove skill o comandi di compattazione per iniziare. Il programma e 
 
 Seleziona GPT-5.6 Sol nell'app e continua in questa sessione. In alternativa puoi aprire tu una nuova sessione nella stessa cartella `rag`, selezionare Sol e usare il testo seguente. Non occorre creare un altro progetto o una terza repository.
 
-> Iniziamo M1 come corso guidato, partendo da U00. Leggi AGENTS.md, HANDOVER.md e la sezione U00 di percorso/GUIDA_DOCENTE_M1.md, poi usa percorso/00-il-problema.md. Parti dal problema con un esempio semplice, aspetta il mio ragionamento e verifica la comprensione. Non costruire tutta la pipeline e non lavorare sul sito. Sono principiante in embedding, vettori e RAG.
+> Riprendiamo M1 da U01, con il primo esercizio pratico Python/JSONL. Leggi AGENTS.md, HANDOVER.md e la guida docente U01. Ho già studiato Appunti1 e Appunti2: non ripartire da U00. Un punto di U02 in Appunti2 resta da chiarire quando ci arriveremo. Usa blocchi coerenti di spiegazione, codice ed esercizio, definendo i termini nuovi senza frammentare tutto in micro-domande. Non lavorare sul sito.
 
 La guida docente contiene le scalette U00–U09, con esempi, errori tipici, modifiche da esercitare e criteri di passaggio. Non è un manuale già scritto parola per parola: le spiegazioni verranno adattate alle tue risposte. PIANO_MASTER copre anche M2/M3; COMPETENZE stabilisce come verificare ciò che hai imparato.
 

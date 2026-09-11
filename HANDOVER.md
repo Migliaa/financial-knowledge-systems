@@ -1,57 +1,50 @@
-# Passaggio a Sol
+# Passaggio al corso M1
 
-Ultimo aggiornamento: 11 settembre 2026.
+Ultimo aggiornamento: 12 settembre 2026.
 
-## Decisione e stato
+## Stato corrente e prossima azione
 
-Il piano corrente è [PIANO_MASTER.md](PIANO_MASTER.md). Sostituisce la sequenza della precedente analisi strategica. Andrea è l'utilizzatore: niente ricerca di clienti, feedback esterno o candidatura come requisito di completamento.
+**Ripartire da U01 (U1): esercizio pratico Python/JSONL. Non ripetere U00.**
+Andrea ha studiato con Claude durante il limite di utilizzo di questa sessione e dichiara compresi Appunti1 e Appunti2, **eccetto un punto della sezione U02 di Appunti2**. Il punto preciso non è ancora identificato: chiederglielo quando arriveremo a U02, senza anticipare ora la lezione.
 
-Tre macroprogetti sequenziali, con codice condiviso e consegne autonome:
-1. M1: ricerca lessicale, embedding, ricerca ibrida, reranking e conversazioni su MTRAG FiQA.
-2. M2: assistente RAG personale, citazioni, diagnosi degli errori, caching e servizio locale minimo.
-3. M3: confronto delimitato tra RAG, ricerca agentica su file e wiki compilata dalle fonti.
+U00 è stata risolta con motivazione corretta secondo il diario della sessione Claude. U01 e U03 hanno preparazione teorica; nessuna esecuzione pratica documentata. U02 non è consolidata. Non confondere studio anticipato con completamento delle unità.
 
-M3 è una parte pianificata con un controllo di fattibilità, non una promessa di prestazioni sul portatile. Fine-tuning: spiegazione prevista; addestramento pratico facoltativo dopo una misura di necessità e fattibilità. Alternativa B più leggera già autorizzata se le misure lo richiedono.
+Leggere [Appunti1](percorso/Appunti1.md), [Appunti2](percorso/Appunti2.md) e le nuove regole di ritmo in AGENTS. Piccole rettifiche tecniche sono state inserite il 12 settembre: sono correzioni degli appunti, non nuova comprensione verificata di Andrea.
 
-**Stato corrente: U00, non iniziata.** Esistono soltanto documenti di pianificazione. Nessun dato/modello scaricato, dipendenza installata, esperimento, risultato o submission. Python/uv presenti, compatibilità non verificata. BGE-small-en-v1.5 è il candidato iniziale per gli embedding, non una dipendenza già validata.
+## Primo incontro nella nuova sessione
 
-**Aggiornamento portfolio e competenze:** [COMPETENZE](percorso/COMPETENZE.md) definisce 13 capacità, esercizi e prove prima delle dichiarazioni pubbliche. Chroma: laboratorio U10b/L01 dopo M1; Redis: L02 facoltativo; FastAPI/Pydantic scelti per U16. [PORTFOLIO](docs/PORTFOLIO.md) definisce un solo progetto pubblico con tre moduli. Andrea ha autorizzato il mockup in `mockup-portfolio/`; sito sorgente preservato, testi protetti importati identici. Esiste il mockup HTML, non il sistema RAG. Non proseguire a rifare il sito quando si passa a Sol: iniziare U00.
+1. Leggi AGENTS, questo file, Appunti2/U01 e la sezione U01 di [GUIDA_DOCENTE_M1](percorso/GUIDA_DOCENTE_M1.md). Appunti1 è il riferimento per i concetti già studiati, non materiale da rispiegare interamente.
+2. Recap di poche frasi, poi un blocco utile con spiegazione, codice ed esercizio insieme. Punto di partenza: loader JSONL, accesso per ID, record invalido e campo source.
+3. Chiarisci in quel contesto le rettifiche Python: il dict conserva l'ordine di inserimento ma si accede per chiave; leggere riga per riga e accumulare tutti i record in una lista non mantiene costante l'uso di memoria; il vecchio esempio salta errori senza registrarli.
+4. Fai prevedere e modificare il codice ad Andrea; aspetta il ragionamento quando serve a verificare la comprensione. Niente micro-domande con un termine per messaggio e niente intera pipeline già costruita.
+5. Chiudi U01 con una verifica pratica. Prima di U02 identifica il passaggio non capito e spiegane i prerequisiti; non passare automaticamente a embedding reali.
+6. Nessuna installazione ML necessaria per iniziare U01. Quando serve, verificare ambiente/compatibilità e rispettare le approvazioni degli strumenti; nessuna spesa.
 
-## Primo turno
-
-**Corso esplicito:** seguire [GUIDA_DOCENTE_M1](percorso/GUIDA_DOCENTE_M1.md), che contiene scalette U00–U09, esempi, esercizi, errori tipici e criteri di passaggio. Per Andrea: [INIZIA_CON_SOL](INIZIA_CON_SOL.md). Nessuna unità ancora svolta; non interpretare la pianificazione o il lavoro Git come lezione completata.
-
-**Focus confermato:** soltanto M1 (U00–U09). Mockup isolato con snapshot autonomo e ZIP in backups; non riprendere il design. Repository `financial-knowledge-systems` per M1/M2/M3 e `portfolio-redesign` indipendente per il sito, collegate agli URL forniti da Andrea. Dettagli in [REPOSITORY](docs/REPOSITORY.md). Prima azione didattica sempre U00.
-
-1. Leggi AGENTS, questo file, la sezione della tappa in PIANO_MASTER e [primo incontro](percorso/00-il-problema.md). Non rileggere tutto l'archivio.
-2. Spiega il prodotto finale in poche frasi e parti dai tre documenti inventati del primo incontro: quale fonte serve per rispondere?
-3. Fai ragionare Andrea prima di introdurre formule. Non presumere competenze Python: verificane poche con un esercizio U01.
-4. Segui il ciclo problema → concetto → lettura di una piccola funzione → previsione → modifica di Andrea → verifica → nota.
-5. Non implementare l'intera pipeline prima che Andrea ne abbia seguito i passaggi. Puoi preparare infrastruttura reversibile, senza saltare le tappe didattiche.
-6. In U04 misura CPU, RAM e tempi su campione prima dell'indice completo; consulta ARCHITETTURA. Nessuna spesa aggiuntiva autorizzata.
-
-## Comprensione
+## Comprensione e prove
 
 | Tema | Stato | Evidenza |
 |---|---|---|
-| Ricerca, vettori, embedding, RAG | Non affrontato insieme | Andrea dichiara di partire da zero |
-| Python e lettura del codice | Da verificare | Nessun esercizio svolto qui |
-| Valutazione, caching, agenti, wiki | Non affrontato insieme | Non inferire conoscenza dalle domande |
-| Fine-tuning | Non affrontato insieme | Pratica non avviata |
+| U00: fonte pertinente e distinzione ricerca/risposta | Risolto con motivazione | Diario Claude: D1 per apertura Aurora |
+| Embedding, tokenizzazione, pesi/vettori, pipeline M1 | Studiato e dichiarato compreso | Appunti1 e messaggio Andrea del 12 settembre |
+| U01: Python, JSONL, loader e lookup | Teoria studiata; pratica da verificare | Appunti2 e dichiarazione Andrea |
+| U02: NumPy, forme e operazioni vettoriali | **Non consolidato; dubbio aperto** | Andrea segnala un punto non capito; non inferire quale |
+| U03: uso di Sentence Transformers | Teoria studiata; codice non eseguito | Appunti2; nessuna run documentata |
+| Caching, agenti, wiki e fine-tuning pratico | Nessuna prova pratica | Pianificazione futura |
 
-Stati consentiti: non affrontato, spiegato, provato insieme, spiegato da Andrea. Registrare evidenza concreta, non dedurre comprensione dal silenzio.
+Non promuovere le correzioni appena aggiunte a «capite». Non inferire competenza dal silenzio o dal titolo di studio.
 
-## Vincoli e controlli futuri
+## Ritmo richiesto
 
-24 GB RAM, Intel Iris Xe; CPU iniziale, zero euro aggiuntivi, circa 5 ore/giorno disponibili senza scadenza promessa. Laboratori KodeKloud mirati: [guida](percorso/KODEKLOUD.md), nessun corso a pagamento necessario.
+Più contenuto per messaggio: spiegazione, codice, esercizio in un blocco coerente. Definire ogni termine nuovo con un esempio, senza tono da principiante assoluto. Ordinare autonomamente i prerequisiti; non seguire ciecamente l'ordine delle domande. Schemi espliciti per percorsi paralleli che convergono. Validare le sintesi di Andrea affermazione per affermazione. Produrre note riusabili, non far ripetere ciò che è già negli appunti. Le regole sono in AGENTS, senza dipendere dalla memoria privata di Claude.
 
-U04: versioni/licenze, passaggi/qrels, split per conversazione, tokenizer/troncamento e prestazioni.
-U11: generatore locale, massimo due candidati dopo pilot; se inadeguato, documentare il limite e conservare la consegna M1.
-U16: API locale e client minimo; Docker solo quando utile e compatibile.
-U18: piccolo corpus agentico fissato senza usare le risposte test; niente confronto spurio con il benchmark completo.
+## Perimetro e conservazione
 
-Nessun requisito di hosting o submission. Non è stata identificata una submission ufficiale aperta e pertinente; SemEval MTRAGEval 2026 è conclusa. Non confondere PR, pubblicazione propria e classifica.
+Piano corrente: [PIANO_MASTER](PIANO_MASTER.md). M1 ricerca, poi M2 RAG/cache e M3 confronto agentico/wiki, stessa base software. Andrea è l'utilizzatore, nessuna ricerca clienti. CPU, 24 GB RAM, Iris Xe, zero spese aggiuntive. Alternative leggere già autorizzate; misurare prima di indicizzare tutto. Nessun download dati/modelli, installazione ML o risultato sperimentale documentato.
 
-## Chiusura di sessione
+Repository corso: https://github.com/Migliaa/financial-knowledge-systems, main. Mockup indipendente: https://github.com/Migliaa/portfolio-redesign, main. Il lavoro precedente di collegamento/caricamento e redesign è concluso; non riprenderlo. Il sito sorgente non è stato modificato. Le capacità future nel mockup non sono competenze già dimostrate.
 
-Aggiorna qui stato, comprensione e prossima azione; una riga nel DIARIO e la nota/scheda coinvolta. Non creare altri handover. I report nasceranno soltanto da risultati reali, secondo DOCUMENTAZIONE. La nota per la centralina è preparata, non inviata; non modificare il portfolio.
+[COMPETENZE](percorso/COMPETENZE.md) definisce prove e criteri; Chroma U10b/L01, Redis facoltativo, FastAPI/Pydantic U16. Non anticiparli ora.
+
+## Chiusura
+
+Aggiornare questo file con unità, comprensione effettiva, esercizio e prossimo passo; una riga nel DIARIO e la nota/run coinvolta. Nessun nuovo handover parallelo. Per Andrea: [INIZIA_CON_SOL](INIZIA_CON_SOL.md). Nessuna compattazione manuale richiesta per la ripresa.

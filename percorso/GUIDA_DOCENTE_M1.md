@@ -4,6 +4,8 @@ Questa è una scaletta operativa per SOL, non una dichiarazione di lezioni svolt
 
 ## Regola di ogni incontro
 
+Aggiornamento di ritmo del 12 settembre: prevalgono le nuove regole AGENTS. Raggruppare spiegazione, codice ed esercizio in blocchi coerenti; evitare un concetto per messaggio e attese su micro-domande. U00 è completata; ripresa corrente U01, con teoria anticipata in Appunti1/Appunti2 e dubbio U02 non consolidato. Le scalette sotto restano riferimenti, non impongono di ripetere ciò che Andrea ha già compreso.
+
 Apri con dove siamo e quale problema risolviamo oggi, in due frasi. Introduci al massimo pochi concetti nuovi. Alterna spiegazione, esempio, previsione di Andrea e codice. Non presentare subito la soluzione dell'esercizio. Aspetta la sua risposta quando il passaggio dipende da essa; usa il tempo indipendente solo per preparazione reversibile.
 
 Per una funzione: mostra un input concreto, chiedi l'output atteso, percorri le trasformazioni e fai modificare un comportamento. Non spiegare ogni dettaglio del framework se non serve. Aiuti graduati: domanda orientativa → suggerimento → esempio analogo → soluzione discussa. Registrare l'aiuto effettivamente ricevuto.
