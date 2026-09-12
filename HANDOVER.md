@@ -31,7 +31,7 @@ L'IA può implementare tutta l'infrastruttura necessaria. Non scegliere tutte le
 - Esercizio U01 presente; non controllato o valutato in questa revisione.
 - Nessuna run embedding/retrieval/RAG nuova eseguita in questa revisione. Versioni e dipendenze da verificare prima del pilot.
 - 24 GB RAM, Iris Xe, CPU, zero spese aggiuntive. FiQA come benchmark; mini-dossier simulato distinto se necessario per versioni/eccezioni.
-- Repository AI e mockup indipendenti già collegate. Non modificare il sito.
+- Repository AI e mockup indipendenti già collegate. Mockup aggiornato su richiesta alla V3: sei aree di competenza, stack separato, fine-tuning pratico eventuale. Anteprima 4174 riavviata senza cache; sito originale invariato. Ripresa didattica D1: non proseguire il redesign senza richiesta.
 - Una scheda per decisione con configurazione, evidenza e limite; risultati generati automaticamente e pochi casi letti insieme.
 - Fine-tuning: criteri spiegati già durante la scelta encoder; training solo se giustificato e sostenibile, non requisito.
 

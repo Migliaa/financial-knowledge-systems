@@ -1,6 +1,6 @@
 # Integrazione nel portfolio: un ingresso, approfondimenti facoltativi
 
-> Revisione successiva richiesta da Andrea: M1/M2/M3 è il primo progetto e il fulcro della home; τ²-bench segue con testi identici. Il registro dei fallimenti è rimosso dal sito proposto e conservato soltanto nello snapshot storico. Quattro aree tecniche (embedding/retrieval, RAG/API/cache, agenti/confronto strategie, valutazione sperimentale), ciascuna con tre capacità e strumenti separati. Le indicazioni d'ordine precedenti sotto sono superate. GitHub collegato al profilo Migliaa; LinkedIn resta da completare.
+> Revisione successiva richiesta da Andrea: M1/M2/M3 è il primo progetto e il fulcro della home; τ²-bench segue con testi identici. Il registro dei fallimenti è rimosso dal sito proposto e conservato soltanto nello snapshot storico. Revisione V3 del 12 settembre: sei aree (embedding/retrieval, design RAG, agenti/wiki, caching, scelta del fine-tuning, valutazione sperimentale), ciascuna con tre capacità. Stack in un approfondimento; API e database eventuali. Fine-tuning pratico condizionale e competenze future esplicitamente previste. Le indicazioni d'ordine precedenti sotto sono superate. GitHub collegato al profilo Migliaa; LinkedIn resta da completare.
 
 11 settembre 2026. Andrea autorizza un mockup di ristrutturazione nella cartella RAG. È un'eccezione esplicita alla vecchia regola di non lavorare sull'HTML; il sito sorgente rimane intatto e il mockup vive in `mockup-portfolio/`. Nessuna pubblicazione, invio o sostituzione del sito attuale.
 
