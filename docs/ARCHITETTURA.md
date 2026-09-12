@@ -1,5 +1,7 @@
 # Architettura di base e confini degli esperimenti
 
+> Aggiornamento 12 settembre: vincoli CPU e integrità sperimentale restano utili; ordine didattico e varianti sono ora definiti dal PIANO_MASTER D1–D6. Due encoder piccoli nel confronto iniziale; API/database/cache avanzate non bloccano il confronto RAG/agente/wiki. Non usare i moduli tecnici di questo documento per imporre lezioni di implementazione di base.
+
 > Questo documento dettaglia la base tecnica e i controlli CPU del laboratorio. Il programma corrente è [PIANO_MASTER](../PIANO_MASTER.md): M1 ricerca, M2 RAG personale/cache, M3 confronto agentico/wiki. Il piano definisce componenti successivi, didattica e criteri di chiusura. Non aggiungerli tutti ora. Fine-tuning pratico facoltativo.
 
 Disegno concordato, implementazione da iniziare con Sol. Non è un elenco di dipendenze già installate. Prima tappa: embedding e ricerca; il generatore viene aggiunto successivamente.

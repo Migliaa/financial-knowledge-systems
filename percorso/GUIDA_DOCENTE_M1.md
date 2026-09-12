@@ -1,5 +1,7 @@
 # Guida docente M1 — insegnare, costruire, verificare
 
+> **SUPERATA COME SEQUENZA OBBLIGATORIA.** Per richiesta di Andrea del 12 settembre si segue PIANO_MASTER, fasi D1–D6 orientate al design applicativo. Queste scalette rimangono un archivio di esempi; non imporre loader Python, quiz di sintassi o U02 prima del confronto embedding. La prossima fase è D1. I criteri di esercizio sotto valgono soltanto se Andrea richiede quel dettaglio.
+
 Questa è una scaletta operativa per SOL, non una dichiarazione di lezioni svolte. Si affianca a PIANO_MASTER (sequenza), COMPETENZE (prove) e HANDOVER (stato). Obiettivo: Andrea comprende e modifica il motore di ricerca, non riceve semplicemente un progetto funzionante. U00–U09 sono il perimetro corrente.
 
 ## Regola di ogni incontro

@@ -1,50 +1,42 @@
-# Passaggio al corso M1
+# Ripresa — design ingegneristico di sistemi di conoscenza
 
-Ultimo aggiornamento: 12 settembre 2026.
+Aggiornato il 12 settembre 2026 dopo la correzione di Andrea.
 
-## Stato corrente e prossima azione
+## Punto di ripartenza
 
-**Ripartire da U01 (U1): esercizio pratico Python/JSONL. Non ripetere U00.**
-Andrea ha studiato con Claude durante il limite di utilizzo di questa sessione e dichiara compresi Appunti1 e Appunti2, **eccetto un punto della sezione U02 di Appunti2**. Il punto preciso non è ancora identificato: chiederglielo quando arriveremo a U02, senza anticipare ora la lezione.
+**D1 del nuovo PIANO_MASTER: scelta di embedding e retrieval per un caso applicativo. Non U01 e non un esame U02.**
 
-U00 è stata risolta con motivazione corretta secondo il diario della sessione Claude. U01 e U03 hanno preparazione teorica; nessuna esecuzione pratica documentata. U02 non è consolidata. Non confondere studio anticipato con completamento delle unità.
+Andrea vuole progettare, scegliere e usare le tecnologie; l'IA si occupa dell'implementazione ordinaria. Non richiedere esercizi su JSONL, liste, sintassi o sottolibrerie. Leggere/modificare il codice che determina il comportamento di embedding, retrieval e RAG è pertinente; leggere un file non è la lezione.
 
-Leggere [Appunti1](percorso/Appunti1.md), [Appunti2](percorso/Appunti2.md) e le nuove regole di ritmo in AGENTS. Piccole rettifiche tecniche sono state inserite il 12 settembre: sono correzioni degli appunti, non nuova comprensione verificata di Andrea.
+U00 completata. U01 affrontata, con esercizio in percorso/u01; conferma formale non data e non necessaria per proseguire. Gli appunti teorici sono già studiati; un dubbio U02 resta aperto e va chiarito solo quando serve, senza presumere quale sia. Non cancellare il lavoro precedente, non ripeterlo.
 
-## Primo incontro nella nuova sessione
+## Primo incontro
 
-1. Leggi AGENTS, questo file, Appunti2/U01 e la sezione U01 di [GUIDA_DOCENTE_M1](percorso/GUIDA_DOCENTE_M1.md). Appunti1 è il riferimento per i concetti già studiati, non materiale da rispiegare interamente.
-2. Recap di poche frasi, poi un blocco utile con spiegazione, codice ed esercizio insieme. Punto di partenza: loader JSONL, accesso per ID, record invalido e campo source.
-3. Chiarisci in quel contesto le rettifiche Python: il dict conserva l'ordine di inserimento ma si accede per chiave; leggere riga per riga e accumulare tutti i record in una lista non mantiene costante l'uso di memoria; il vecchio esempio salta errori senza registrarli.
-4. Fai prevedere e modificare il codice ad Andrea; aspetta il ragionamento quando serve a verificare la comprensione. Niente micro-domande con un termine per messaggio e niente intera pipeline già costruita.
-5. Chiudi U01 con una verifica pratica. Prima di U02 identifica il passaggio non capito e spiegane i prerequisiti; non passare automaticamente a embedding reali.
-6. Nessuna installazione ML necessaria per iniziare U01. Quando serve, verificare ambiente/compatibilità e rispettare le approvazioni degli strumenti; nessuna spesa.
+1. Leggere AGENTS, questo file e D1 nel [PIANO_MASTER](PIANO_MASTER.md). Vecchie unità e GUIDA_DOCENTE sono riferimenti subordinati, non programma da eseguire.
+2. Mostrare quattro richieste finanziarie: parafrasi, termine preciso, condizione numerica/eccezione, follow-up conversazionale. Spiegare la differenza fra somiglianza di tema e fonte che risponde.
+3. Presentare MiniLM, BGE e BM25 come candidati con meccanismi e compromessi. Stessa dimensionalità non implica rappresentazione equivalente; due encoder densi non sono due famiglie totalmente diverse. Nessun modello è già vincitore.
+4. Andrea formula ipotesi e criterio di scelta; l'assistente prepara campione, ambiente e primo pilot CPU. Nessun loader da far completare come esercizio.
+5. Mostrare ranking/testi e poi proiezione 2D con vicini nello spazio originale; non dedurre qualità dalla bellezza dei cluster. Niente grafici con numeri inventati.
+6. Proseguire a D2, RAG minimo D3 e subito confronto agente/wiki D4. API, Chroma, Redis e Docker non sono prerequisiti.
 
-## Comprensione e prove
+## Metodo richiesto
 
-| Tema | Stato | Evidenza |
-|---|---|---|
-| U00: fonte pertinente e distinzione ricerca/risposta | Risolto con motivazione | Diario Claude: D1 per apertura Aurora |
-| Embedding, tokenizzazione, pesi/vettori, pipeline M1 | Studiato e dichiarato compreso | Appunti1 e messaggio Andrea del 12 settembre |
-| U01: Python, JSONL, loader e lookup | Teoria studiata; pratica da verificare | Appunti2 e dichiarazione Andrea |
-| U02: NumPy, forme e operazioni vettoriali | **Non consolidato; dubbio aperto** | Andrea segnala un punto non capito; non inferire quale |
-| U03: uso di Sentence Transformers | Teoria studiata; codice non eseguito | Appunti2; nessuna run documentata |
-| Caching, agenti, wiki e fine-tuning pratico | Nessuna prova pratica | Pianificazione futura |
+Spiegazione applicativa densa, alternative e schema, configurazione/codice rilevante, confronto, errori e decisione documentata. Definire i termini nuovi e ordinare i prerequisiti senza tono elementare. Non micro-domande né manuale teorico separato. Verificare che Andrea sappia motivare una scelta e cambiarla davanti ai dati; non chiedergli di riscrivere implementazioni generiche.
 
-Non promuovere le correzioni appena aggiunte a «capite». Non inferire competenza dal silenzio o dal titolo di studio.
+L'IA può implementare tutta l'infrastruttura necessaria. Non scegliere tutte le architetture senza spiegare le decisioni ad Andrea. Responsabilità ingegneristica: controllare evidenza e limiti del sistema, anche se il codice è generato.
 
-## Ritmo richiesto
+## Stato effettivo
 
-Più contenuto per messaggio: spiegazione, codice, esercizio in un blocco coerente. Definire ogni termine nuovo con un esempio, senza tono da principiante assoluto. Ordinare autonomamente i prerequisiti; non seguire ciecamente l'ordine delle domande. Schemi espliciti per percorsi paralleli che convergono. Validare le sintesi di Andrea affermazione per affermazione. Produrre note riusabili, non far ripetere ciò che è già negli appunti. Le regole sono in AGENTS, senza dipendere dalla memoria privata di Claude.
+- Appunti1/Appunti2 studiati, con rettifiche segnalate nel turno precedente; dubbio U02 ancora aperto.
+- Esercizio U01 presente; non controllato o valutato in questa revisione.
+- Nessuna run embedding/retrieval/RAG nuova eseguita in questa revisione. Versioni e dipendenze da verificare prima del pilot.
+- 24 GB RAM, Iris Xe, CPU, zero spese aggiuntive. FiQA come benchmark; mini-dossier simulato distinto se necessario per versioni/eccezioni.
+- Repository AI e mockup indipendenti già collegate. Non modificare il sito.
+- Una scheda per decisione con configurazione, evidenza e limite; risultati generati automaticamente e pochi casi letti insieme.
+- Fine-tuning: criteri spiegati già durante la scelta encoder; training solo se giustificato e sostenibile, non requisito.
 
-## Perimetro e conservazione
-
-Piano corrente: [PIANO_MASTER](PIANO_MASTER.md). M1 ricerca, poi M2 RAG/cache e M3 confronto agentico/wiki, stessa base software. Andrea è l'utilizzatore, nessuna ricerca clienti. CPU, 24 GB RAM, Iris Xe, zero spese aggiuntive. Alternative leggere già autorizzate; misurare prima di indicizzare tutto. Nessun download dati/modelli, installazione ML o risultato sperimentale documentato.
-
-Repository corso: https://github.com/Migliaa/financial-knowledge-systems, main. Mockup indipendente: https://github.com/Migliaa/portfolio-redesign, main. Il lavoro precedente di collegamento/caricamento e redesign è concluso; non riprenderlo. Il sito sorgente non è stato modificato. Le capacità future nel mockup non sono competenze già dimostrate.
-
-[COMPETENZE](percorso/COMPETENZE.md) definisce prove e criteri; Chroma U10b/L01, Redis facoltativo, FastAPI/Pydantic U16. Non anticiparli ora.
+La versione precedente del piano è in docs/archivio. La nuova sequenza è D1–D6; non tornare a U01 per la sua mancata conferma.
 
 ## Chiusura
 
-Aggiornare questo file con unità, comprensione effettiva, esercizio e prossimo passo; una riga nel DIARIO e la nota/run coinvolta. Nessun nuovo handover parallelo. Per Andrea: [INIZIA_CON_SOL](INIZIA_CON_SOL.md). Nessuna compattazione manuale richiesta per la ripresa.
+Aggiornare qui decisione corrente, ciò che Andrea sa spiegare e prossimo confronto; una riga nel DIARIO e scheda/nota coinvolta. Nessun nuovo handover parallelo. Prompt di ripresa in [INIZIA_CON_SOL](INIZIA_CON_SOL.md).

@@ -1,5 +1,7 @@
 # Percorso di apprendimento
 
+> **Piano corrente rivisto:** seguire le decisioni D1–D6 in [PIANO_MASTER](../PIANO_MASTER.md). U00/U01 non sono più cancelli; il prossimo incontro confronta embedding e ricerca in un contesto applicativo. Le indicazioni originarie qui sotto restano riferimenti, subordinate a questa revisione. L'IA implementa; Andrea sceglie, comprende le configurazioni rilevanti, interpreta le prove e documenta il design.
+
 Il programma corrente U00–U22 e gli esperimenti E01–E12 sono definiti una sola volta nel [PIANO_MASTER](../PIANO_MASTER.md). Non mantenere un calendario parallelo qui.
 
 La [matrice competenze](COMPETENZE.md) definisce risultati di apprendimento, stack, verifiche del codice e due laboratori d'integrazione (Chroma e Redis facoltativo). I criteri non sono uno stato di competenze già acquisite.

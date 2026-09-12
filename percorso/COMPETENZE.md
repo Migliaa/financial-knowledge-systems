@@ -1,5 +1,7 @@
 # Competenze da costruire e rendere verificabili
 
+> **Revisione del 12 settembre:** prevale il nuovo PIANO_MASTER. Le prove consistono nel scegliere, configurare, usare e valutare sistemi, anche con implementazione affidata all'IA. Gli esercizi C01/C02 di programmazione di base non sono più requisiti; leggere/modificare il codice rilevante al design resta utile. Chroma/API/Redis/Docker sono estensioni e non ritardano il confronto RAG/agente/wiki. La matrice precedente sotto è un catalogo, non un contratto di esami da superare.
+
 11 settembre 2026. Estensione didattica del [PIANO_MASTER](../PIANO_MASTER.md). Nessuna nuova competenza del percorso RAG è già acquisita per il solo fatto di essere elencata qui. Il mockup può mostrarla come prevista. La verifica della comprensione vive in HANDOVER; questo documento definisce i criteri, non duplica gli stati personali.
 
 ## Che cosa significa «so usarlo»

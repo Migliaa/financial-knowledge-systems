@@ -1,156 +1,139 @@
-# Corso-progetto — sistemi di conoscenza finanziaria
+# Progetto — scegliere e valutare sistemi di conoscenza finanziaria
 
-**Piano operativo del 11 settembre 2026.** Sostituisce le priorità precedenti in STRATEGIA_PROFILO, SCELTA e IMPOSTAZIONE. Tre macroprogetti sequenziali, una base software condivisa, Andrea come utilizzatore. Nessuna ricerca di clienti, candidatura o raccolta di feedback esterno è necessaria per completarli. Non è un piano di produzione aziendale né una promessa di prestazioni. Nessuna implementazione ancora avviata.
+**Revisione del 12 settembre 2026 dopo la correzione di Andrea.** Questo è il piano corrente. Sostituisce il percorso obbligatorio U00–U22: quelle unità restano riferimenti consultabili, non prerequisiti né esami da superare. Versione precedente conservata in docs/archivio/PIANO_MASTER-2026-09-11.md.
 
-## Obiettivo, vincoli e metodo
+## Obiettivo e responsabilità
 
-Andrea impara a leggere, modificare, misurare e spiegare un sistema che cerca e usa documenti. Finanza come dominio motivante; zero euro aggiuntivi; 24 GB RAM, CPU come riferimento. Il progetto deve insegnare sia i concetti AI sia il codice che li collega. I risultati sono quelli osservati, anche quando una variante peggiora.
+Dimostrare capacità di progettare, usare e confrontare embedding, retrieval, RAG e strategie agentiche su un caso finanziario realistico. Andrea decide requisiti, alternative, criteri e interpretazione; l'assistente prepara implementazione, dati, esecuzioni e grafici. Andrea deve capire il codice che cambia il comportamento del sistema, non scrivere loader o dimostrare sintassi Python.
 
-**Scelta tecnica iniziale:** MTRAG FiQA con passaggi e giudizi ufficiali; ricerca esatta per evitare un server; un embedding piccolo; generatore locale scelto dopo un pilota. Il passaggio già autorizzato alla ricerca più leggera resta disponibile se il carico è eccessivo. Non si sacrifica la comprensione per finire prima.
+Il codice pertinente: testo inviato all'encoder, metadati/filtri, chunk, configurazione della ricerca, fusione, contesto del generatore, chiave di cache, strumenti e condizioni di arresto. Il codice di servizio viene realizzato e verificato dall'IA; se un suo dettaglio compromette il risultato, l'assistente ne esplicita la conseguenza. Delegare implementazione non delega la responsabilità di verificare un sistema.
 
-Ogni unità segue: problema concreto → spiegazione in italiano → esempio manuale → lettura di una piccola funzione → previsione di Andrea → sua modifica o piccolo esercizio → esecuzione e test → nota breve. Le attività meccaniche sono automatizzate. SOL deve spiegare dati in ingresso, trasformazioni, uscita e possibili errori del codice; non limitarsi a commentarlo riga per riga. Andrea sceglie se scrivere da sé o guidare la modifica, ma deve poter ricostruire il ragionamento.
+U00 conclusa; U01 affrontata con esercizio presente ma non formalmente confermata. La conferma non blocca nulla. Dubbio U02 aperto: spiegarlo soltanto quando utile al confronto, non come esame di NumPy.
 
-**Ritmo di partenza, adattabile:** unità di circa 60–90 minuti di lavoro attivo, non scadenze. Su 5 ore disponibili alternare concetti, codice, esperimenti e una breve chiusura documentale. Non stimare il numero totale di giorni prima della prima unità. Un blocco non compreso si riprende; la compilazione del codice non equivale ad apprendimento.
+## Caso applicativo e dati
 
-## Mappa dei tre macroprogetti
+**Assistente di consultazione per informazioni finanziarie:** cercare evidenze, distinguere prodotti/condizioni, rispondere citando le fonti, riconoscere informazioni mancanti o superate. Uso personale di Andrea, nessun cliente da trovare. Non trading, non raccomandazioni finanziarie attuali.
 
-| ID | Domanda | Consegna autonoma | Dipendenza |
+Due insiemi con ruoli diversi:
+- **MTRAG FiQA:** benchmark con annotazioni esistenti per misurare retrieval e conversazione senza etichettatura massiva. Congelare revisione, passaggi, ID, qrels e split per conversazione. Non presumere che contenga versioni di policy, tabelle o casi sufficienti per ogni categoria.
+- **Mini-dossier applicativo controllato**, soltanto dove FiQA non copre il fenomeno: circa 12–20 brevi documenti in inglese con condizioni, date, eccezioni e rimandi; fonti finanziarie sintetiche, esplicitamente simulate. L'assistente prepara corpus e casi con riferimenti; Andrea legge pochi casi istruttivi. Non chiamarlo benchmark indipendente, esperienza cliente o valutazione di correttezza finanziaria reale. Se si usano documenti reali, verificare prima licenze/provenienza e non mescolare la valutazione con FiQA.
+
+Il mini-dossier sarà condiviso da RAG, agent file search e wiki; selezione e domande congelate prima dell'ottimizzazione. Serve a isolare effetti di design; non dimostra prestazioni generali. I giudizi creati dall'IA non diventano verità solo perché sono automatici.
+
+## Metodo di lavoro per ogni decisione
+
+1. Mostrare una domanda realistica e il problema che pone.
+2. Spiegare due o tre alternative pertinenti, i meccanismi e i compromessi con uno schema quando utile.
+3. Andrea formula una scelta e cosa si aspetta di osservare, senza quiz sulla sintassi.
+4. L'assistente implementa/esegue il confronto; mostra solo il codice/configurazione che materializza la scelta.
+5. Leggere risultati e pochi errori, distinguendo osservazione e spiegazione ipotizzata.
+6. Conservare una scheda breve: requisito → alternative → previsione → confronto → decisione → limite.
+
+Non assegnare esercizi Python/JSONL o corsi introduttivi come prerequisiti. KodeKloud solo se Andrea chiede un approfondimento utile a una lacuna incontrata. Non generare un trattato in anticipo: insegnare dentro gli esperimenti. Non costruire tutte le varianti senza coinvolgere Andrea nelle decisioni; infrastruttura e baseline possono essere preparate autonomamente.
+
+## Sequenza effettiva
+
+M1/M2/M3 restano capitoli della stessa repository e di un solo progetto pubblico. Le fasi D identificano decisioni, non nuove lezioni da completare meccanicamente. Gli ID E01–E12 precedenti si conservano se già usati; per nuove prove collegare la scheda al D corrispondente senza riusare un ID per un altro esperimento.
+
+| Fase | Decisione da imparare | Prova concreta | Chiusura |
 |---|---|---|---|
-| M1 — Ricerca | Quali informazioni troviamo, e con quale costo? | Motore di ricerca locale + confronto riproducibile + report breve | Basi Python necessarie, insegnate durante il lavoro |
-| M2 — RAG personale | Le fonti diventano risposte supportate, aggiornabili e veloci? | Assistente locale usato da Andrea + prove di risposte/cache/errori + report | M1 funzionante e compreso |
-| M3 — Ricerca agentica e wiki | Conviene esplorare durante la domanda o preparare conoscenza prima? | Confronto controllato di tre strategie + prova di aggiornamento + report | M2 e generatore con capacità sufficienti |
+| D1 / M1 | Quale embedding e quale tipo di ricerca per il compito? | Due encoder piccoli, BM25, confronto query/classifiche e mappa 2D | Scelta motivata sullo sviluppo, costi e casi di errore |
+| D2 / M1 | Quale unità indicizzare e come combinare le evidenze? | Chunking nel dossier, metadati, ibrida e reranking mirati | Configurazione retrieval scelta, report M1 breve |
+| D3 / M2 essenziale | Come trasformare le fonti in risposte? | RAG base vs retrieval selezionato; una variante per conversazione/decomposizione se pertinente | Baseline generativa, citazioni e diagnosi degli errori |
+| D4 / M3 | Quando convengono agente sui file e wiki? | Stesso dossier e generatore: RAG fisso / agente raw / agente wiki | Confronto end-to-end, costruzione e aggiornamenti inclusi |
+| D5 / M2–M3 | Che cosa conviene conservare e quando invalidarlo? | Cache esatta/versionata, semantica circoscritta, fonte cambiata | Politica cache motivata, risparmio e falsi riusi |
+| D6 / estensione | Serve modificare i pesi? | Diagnosi residuale, dati training/test separati, pilot se sostenibile | Decisione fine-tuning vs alternative, pratica soltanto se eseguita |
 
-Chiudere M1 prima di ampliare M2, e M2 prima di M3. Possibile affiancare solo brevi laboratori di basi; niente tre implementazioni in parallelo. Se M3 è troppo oneroso, una dimostrazione documentata su pochi casi resta didattica e non viene chiamata benchmark conclusivo. M1 e M2 restano consegne valide.
+**API, Docker, Chroma e Redis non sono cancelli prima di D4.** Si aggiungono dopo come integrazioni utili, oppure si omettono senza impedirci di documentare il confronto. La consegna M2 può essere inizialmente una pipeline locale; il servizio API è un'estensione successiva. Nessuna attesa di report editoriale perfetto per iniziare il confronto seguente: bastano esecuzioni conservate e una decisione comprensibile.
 
-## Unità e prove di apprendimento
+## D1 — due encoder, non due nomi messi a caso
 
-La [matrice competenze](percorso/COMPETENZE.md) definisce verifiche di comprensione del codice, strumenti scelti e formulazioni pubbliche ammissibili. Aggiunge U10b/L01 (Chroma locale) e L02 facoltativo (Redis), senza moltiplicare gli esperimenti principali. La struttura pubblica è definita in [PORTFOLIO](docs/PORTFOLIO.md): un progetto visibile con tre moduli, non nove sezioni da visitare.
+Confronto iniziale proposto:
+- `sentence-transformers/all-MiniLM-L6-v2`: encoder per frasi/paragrafi brevi, utile come baseline di similarità.
+- `BAAI/bge-small-en-v1.5`: candidato orientato anche al recupero query/passaggio, con configurazione query documentata.
 
-| Unità | Concetti e lavoro concreto | Codice da capire/modificare | Evidenza e documentazione |
-|---|---|---|---|
-| U00 | Perché cercare fonti, perché un modello può rispondere senza averle | Nessun prerequisito; esempio dei tre documenti in percorso/00 | Andrea distingue ricerca e risposta; schema della catena |
-| U01 | File, liste, dizionari, funzioni, JSONL, eccezioni; solo lacune effettive | Leggere tre record, cercare un ID, gestire un record invalido | Piccolo esercizio e test; KodeKloud Python se utile |
-| U02 | Vettore, dimensioni, norma, prodotto scalare e coseno | Calcolo su vettori didattici, poi NumPy; forma della matrice | Andrea predice una vicinanza e spiega limiti del disegno 2D |
-| U03 | Embedding appreso, bi-encoder, tokenizer, normalizzazione, troncamento | Codificare testi e query, vedere forme e classifiche | Primo embedding reale; distinguere output del modello e numeri inventati |
-| U04 | Dataset, fonti pertinenti, split, confronto equo | Loader FiQA, ID, manifest, controlli qrels | Dati e split congelati; prova di fattibilità CPU |
-| U05 | Ricerca per parole, frequenze, BM25 | Una ricerca manuale piccola, poi libreria; tokenizzazione | E01: prima misura, spiegazione di Recall e nDCG su pochi risultati |
-| U06 | Ricerca semantica esatta | Matrice-vettore, ordinamento, top-k, cache embedding | E02: confronto con E01; errori su nomi/numeri/parafrasi |
-| U07 | Fusione delle classifiche, RRF | Implementare una piccola funzione di fusione con test | E03: ibrido vs componenti; non presumere vittoria |
-| U08 | Reranking e cross-encoder; costo query-passaggio | Riordinare solo i primi 20 candidati, restituire 10 | E04: prova CPU e confronto; facoltativo adottarlo |
-| U09 | Perché la storia cambia una domanda | Costruire query da ultima domanda / storia delle domande | E05: confronto isolato; chiusura M1 e report |
-| U10 | Chunking, overlap, titoli, riferimenti al documento | Due segmentazioni di testi didattici o derivati con mappa ID | E06: prova didattica; distinta dal punteggio ufficiale |
-| U10b | Persistenza, metadati e ciclo di vita in Chroma locale | Riutilizzare embedding, filtrare, riaprire, aggiornare/eliminare record | L01: confronto d'integrazione con NumPy; non nuovo benchmark; rinviabile per incompatibilità |
-| U11 | Modello generativo, token, contesto, prompt e citazioni | Costruzione del contesto con limiti, invocazione locale | Pilota 3–5 domande; configurazione generativa congelata |
-| U12 | RAG semplice vs selezione migliore; fonti corrette come controllo | Collegare ricerca e generazione; formati di risposta | E07: nessuna fonte / fonti corrette / recuperate sullo stesso campione |
-| U13 | Errori di ricerca vs risposta, astensione, citazioni | Controlli formali e valutazione separata | Pochi casi letti insieme; limiti espliciti delle misure automatiche |
-| U14 | Cache persistente ed esatta, invalidazione | Chiavi, versioni, TTL, hit/miss; test cambio corpus/prompt | E08: carico ripetuto freddo/caldo, risparmi e risultati obsoleti |
-| U15 | Cache semantica e falsi riusi | Ricerca nella cache, soglia sullo sviluppo, filtri di entità/data | E09: laboratorio circoscritto, funzione disattivata di default |
-| U16 | API locale FastAPI/Pydantic, input, timeout, errori, test e uso personale | Collegare componenti senza duplicare logica; piccolo client e test pytest | Demo locale, runbook e report M2; Docker solo dopo prova compatibilità |
-| U17 | Agente: strumenti, stato, limiti e condizione di arresto | Ciclo esplicito search/read, validazione degli argomenti | Pilota tool calling, senza shell arbitraria o annotazioni attese |
-| U18 | Ricerca agentica nei file | Elenco, ricerca testuale, lettura di file/range, cronologia | E10: agente vs ricerca fissa su identica collezione controllata |
-| U19 | Wiki: fonti immutabili, pagine derivate, collegamenti e provenienza | Ingestione, indice, verifica riferimenti, versione delle pagine | Costruzione da sole fonti, senza domande/risposte del test |
-| U20 | Confronto wiki / file originali / RAG fisso | Stessi strumenti per agente raw/wiki; limiti e misure condivisi | E11: qualità, costo iniziale e per domanda, numero di passi |
-| U21 | Fonte modificata, sintesi vecchia, cache vecchia | Invalidazione e ricostruzione delle dipendenze | E12: modifica controllata, regressioni e report M3 |
-| U22 | Fine-tuning: che cosa cambia nei pesi e quando conviene | Lettura di un esempio minimo; eventuale training separato | Decisione motivata; pratica opzionale con risorse e dati separati |
+Entrambi producono vettori densi di 384 dimensioni. Sono due modelli preaddestrati con scelte di training/pooling e limiti diversi, **non due famiglie architetturali radicalmente diverse** e non modelli addestrati da noi sul dominio finanziario. Le differenze osservate non possono essere attribuite al solo pooling. Non sostituire il pooling a piacere ignorando il training.
 
-Unità e numeri identificano argomenti, non giornate. Si possono accorpare unità già comprese, mai marcarle completate senza evidenza. Ogni report include l'apporto di librerie e dataset oltre alle modifiche di Andrea.
+Decisione applicativa: basta una rappresentazione di similarità generale per le nostre domande, oppure l'altro encoder recupera evidenze migliori? Confrontare anche BM25: per codici o termini distintivi la similarità semantica non è necessariamente sufficiente. Nessuna vittoria presunta.
 
-## M1 — decisioni tecniche e matrice esperimenti
+Prima dei download completi: campione CPU, spazio, lunghezza e costo di ciascun modello. Usare gli stessi passaggi ufficiali, documentare i token persi per ciascuno; eventuale analisi su testi che rientrano nei limiti di entrambi è separata, non sostituisce silenziosamente il test. Cache embedding versionata. Se due encoder sul corpus sono sproporzionati, usare un corpus delimitato dichiarato, non nascondere la riduzione.
 
-**Primo embedding:** `BAAI/bge-small-en-v1.5`, candidato scelto per iniziare, non migliore modello proclamato. Verificata scheda ufficiale; revisione esatta da bloccare all'acquisizione. Inglese, CPU, Sentence Transformers, normalizzazione e istruzione query coerenti con la scheda. Controllare i token reali: MTRAG e BGE non condividono necessariamente tokenizer/limiti.
+Tipi di query da esplorare: parafrasi; termini/identificatori precisi; numeri, negazioni ed eccezioni; riferimenti conversazionali. Gruppi descritti con regole fissate prima dei risultati e denominatori espliciti; categorie piccole restano analisi di casi, non percentuali affidabili per settore.
 
-**Reranker candidato:** `cross-encoder/ms-marco-MiniLM-L6-v2`, solo sul piccolo insieme di candidati. Nessuna scansione del corpus con cross-encoder. Il confronto base resta utilizzabile se il reranker è troppo lento.
+### Figura 2D
 
-| Run | Variante | Condizioni mantenute uguali |
-|---|---|---|
-| E01 | BM25 | Stesso corpus, query, split, cutoff |
-| E02 | Embedding | Come E01; misurare indicizzazione separata |
-| E03 | BM25 + embedding tramite RRF | Stesse classifiche; parametri fissati sullo sviluppo |
-| E04 | Migliore retrieval di sviluppo + reranker | Stessi candidati confrontati prima/dopo |
-| E05 | Ultima domanda vs storia delle domande | Retrieval fissato; nessuna riscrittura gold gratuita |
+Prevista come strumento di esplorazione, preferibilmente interattiva; export statico nel report. Prima mostrare domanda, top-k e testo delle fonti: la figura deve spiegare un comportamento concreto, non essere la prima e unica evidenza.
 
-Non fare tutte le combinazioni. Metriche primarie nDCG@10, Recall@5/@10; risultati per query e aggregati, tempi e memoria. Metodi deterministici non richiedono ripetizioni identiche per la qualità; ripetere quando serve misurare tempo o variabilità generativa. Split per conversazione; benchmark intero e sottoinsieme dichiarati distintamente. Conservare l'originale con passaggi ufficiali per comparabilità; E06 non altera retroattivamente E01–E05.
+Stessi ID di documenti e query, colori/temi assegnati indipendentemente dal risultato, proiezione UMAP riproducibile per ogni modello (parametri/seed registrati). Due mappe indipendenti non hanno assi/direzioni/distanze confrontabili: non dedurre miglioramento da uno spostamento visivo. Non unire direttamente vettori di modelli diversi come se condividessero le coordinate. Per query nuove usare la trasformazione del riduttore già adattato al corpus, se supportata.
 
-**Comprendere senza implementare tutto:** TF-IDF come confronto concettuale a BM25; sparse appresi/SPLADE, multi-vector/ColBERT, Matryoshka, ANN/HNSW e multilingua solo panoramica al momento opportuno. Embedding quantizzati int8/binari come estensione/fallback B, distinta da riduzione dimensionale e fine-tuning. Non tagliare coordinate arbitrariamente e chiamarlo Matryoshka.
+Mostrare i vicini calcolati nello **spazio originale**, selezione query/documento e relativo testo; accanto Recall/nDCG disponibili, latenza e memoria. UMAP può distorcere vicinanze e separazioni: cluster più belli non dimostrano retrieval migliore. Un documento può essere dello stesso tema e non rispondere alla domanda. 3D solo se risolve un limite reale della lettura 2D, non come requisito.
 
-## M2 — applicazione personale e RAG
+## D2 — design della rappresentazione e del recupero
 
-**Utente e compito:** Andrea interroga e confronta risposte su una raccolta finanziaria, vede fonti e tracce e controlla se il sistema ha risposto usando informazioni sufficienti. Nessun cliente da trovare. Il flusso è una demo didattica personale; non assumere correttezza finanziaria attuale dalle vecchie fonti del benchmark.
+Tre piani da distinguere:
+1. **Rappresentazione:** densa, lessicale/sparsa, multi-vettore; lingua, compito di training, dimensioni e lunghezza supportata.
+2. **Che cosa rappresentiamo:** passaggio corto, sezione, testo con titolo/metadati; conservazione di eccezioni e contesto.
+3. **Come cerchiamo:** ricerca esatta/approssimata, filtri, ibrida e reranking. Un database è implementazione di persistenza/ricerca, non una nuova capacità semantica.
 
-**Pipeline:** domanda/storia → identificazione versione corpus → cache esatta valida → se miss, ricerca → eventuale reranking → selezione entro budget → generatore → risposta e riferimenti → controlli → traccia e cache. Gli embedding dei documenti sono già persistenti e non si ricalcolano a ogni domanda. La cache semantica, se sperimentata, è una diramazione esplicita, disattivabile.
+Implementazione principale limitata:
+- Sul benchmark: BM25, i due encoder; poi RRF con l'encoder selezionato e confronto con/senza cross-encoder sui top 20. Non fare tutte le combinazioni.
+- Nel dossier: due segmentazioni (fissa vs confini di sezione, con budget documentato); test di domanda che richiede un'eccezione nello stesso contesto. Metadati prodotto/versione con filtri prima del ranking; il test deve specificare la versione richiesta.
+- Multi-vettore/ColBERT, sparse learned/SPLADE, multilingual, quantizzazione/Matryoshka: spiegare quale problema risolvono. Pilot aggiuntivo solo se un errore o vincolo misurato lo giustifica, non benchmark obbligatorio di ogni tecnologia.
 
-**Generatore:** backend locale con interfaccia sostituibile; scegliere il modello quantizzato compatibile al momento U11 con al massimo due candidati piccoli, leggendo scheda/licenza e chat template. Non fissare oggi velocità o qualità su hardware non provato. `llama.cpp` è candidato runtime; l'eseguibile/ambiente Windows va verificato. Modello, quantizzazione, template, contesto e impostazioni diventano immutabili per il confronto. Tool calling verrà verificato separatamente prima di M3.
+Codice utile ad Andrea: encoder/config, costruzione del testo del chunk, filtro e fusione. Loader, serializzazione e batch plumbing li prepara l'assistente. Recall/nDCG misurano recupero, non correttezza generativa; confrontare qualità e risorse, non un unico punteggio globale.
 
-**E07:** sullo stesso piccolo campione preregistrato confrontare modello senza fonti, modello con fonti gold e modello con fonti recuperate; se il costo consente, confronto recupero semplice/variante selezionata. Partire da 12–20 task distribuiti per conversazione e rispondibilità, senza selezionarli dopo aver visto gli esiti; dichiarare il numero effettivo. Non è una misura dell'intero MTRAG. Risposte attese già disponibili non rendono automatica la valutazione di ogni parafrasi. Controlli formali automatizzati su tutto; leggere insieme 6–10 casi istruttivi; ampliare giudizio manuale/automatico solo per claim che lo richiedono. Non pubblicare un tasso complessivo di correttezza su risposte non valutate.
+## D3 — confrontare RAG con uno scopo
 
-Le nuove domande spontanee di Andrea alimentano la demo e lo studio, non il test congelato. Nessun corpus annotato da costruire manualmente.
+Pipeline base: domanda → retrieval → contesto → risposta con fonti.
+Prima distinguere fallimento della ricerca, contesto insufficiente e interpretazione/generazione. Pilot locale 3–5 richieste prima di campagne; massimo due generatori candidati, nessuna API a pagamento.
 
-**Architetture:** provare RAG semplice, retrieval migliorato con budget e citazioni, e gestione della conversazione. Studiare parent-child, query rewriting/decomposizione, HyDE e GraphRAG come risposte a tipi di errore, senza renderle tutte implementazioni obbligatorie. Query rewriting può diventare un singolo esperimento opzionale se i dati mostrano un bisogno. La wiki di M3 non equivale automaticamente a GraphRAG.
+Minimo:
+- RAG con retrieval semplice vs retrieval selezionato in D2, stesso generatore/prompt/budget di contesto.
+- Controllo con fonti gold su casi annotati: diagnostico, mai presentato come sistema autonomo.
+- Una variante adattiva se il compito la richiede: riscrittura della query usando la storia **oppure** decomposizione di domanda multi-documento. Misurare anche il suo costo; nessuna dipendenza da risposte gold nel prompt.
+- Sul mini-dossier, se entra nel contesto a costo sostenibile, tutto il dossier come baseline: può mostrare che il retrieval non conviene a quella scala.
 
-**Applicazione:** moduli Python piccoli, CLI prima e poi API locale con client minimo; validazione, test utili, timeout, errori, log, ripresa e invalidazione. Nessuna dipendenza obbligatoria da Redis, cloud, Kubernetes o orchestratori. La forma del client si decide a U16 in base al flusso, senza una fase di design autonoma. Docker è un esercizio di distribuzione dopo il funzionamento locale, non condizione per imparare RAG.
+Non dire «ranking migliore del RAG» senza distinguere classifica dei passaggi e qualità della risposta. Registrare supporto delle affermazioni, citazioni, astensione, tempi/chiamate e casi valutati. Dataset piccoli e controlli manuali limitati comportano conclusioni limitate. HyDE, parent-child e GraphRAG vengono spiegati rispetto ai problemi; non installati per collezionare nomi.
 
-## Caching — implementazione, limiti e verifiche
+## D4 — agente sui file e wiki subito dopo la baseline
 
-| Livello | Che cosa riusa | Risparmio effettivo | Politica |
-|---|---|---|---|
-| Embedding documenti | Vettori di testi già codificati | Codifica e indicizzazione | Persistente già in M1; hash testo + modello/revisione/preprocessing |
-| Embedding query e risultati ricerca | Vettore query/classifica | Ricodifica o ricerca ripetuta | Chiave include input effettivo/storia, versione indice e configurazione |
-| Risposta esatta | Risposta per lo stesso input operativo | Può saltare ricerca e generazione | M2; corpus/prompt/modello/storia/politica nel fingerprint, TTL e invalidazione |
-| Risposta semantica | Risposta a una domanda considerata equivalente | Può evitare il resto della pipeline, ma richiede verifica della cache | Solo laboratorio E09; default off e nessuna soglia universale |
-| Prefisso/KV nel runtime | Computazioni per token già elaborati | Tempo di elaborazione input, a seconda del runtime | Studio e misura se supportato; non riusa automaticamente una risposta e non elimina il contesto logico |
+Stesso mini-dossier, stesso generatore, stesse domande e limiti:
+- F: RAG selezionato, ricerca prestabilita.
+- A: agente con list/search_text/read, può iterare e deve fermarsi entro limiti applicati dal codice.
+- W: stesso tipo di agente e strumenti su wiki compilata dalle sole fonti con provenienza; nessun accesso alle domande/risposte test in costruzione.
 
-Usare inizialmente file/SQLite, non un nuovo servizio. Due domande semanticamente vicine possono chiedere condizioni diverse per prodotto, valuta, data o negazione. Non usare la sola similarità come prova di equivalenza. Le entità e i filtri rilevanti devono coincidere; richieste temporali/dinamiche escluse dalla cache semantica iniziale.
+Wiki: indice, pagine sintetiche, link alle fonti originali/versioni. Compilazione non significa fine-tuning. È una strategia di preparazione del contesto, non un algoritmo unico universalmente definito. Eventuale accesso alle fonti originali esplicito ed equivalente fra agenti.
 
-Per tutte le cache conservare provenance, versione e istante di creazione. Invalidazione conservativa globale per versione corpus all'inizio; invalidazione per dipendenze soltanto più avanti. Un TTL da solo non garantisce aggiornamento. Nessuna cache di errori/transitori inizialmente. Se in futuro ci fossero più utenti, includere identità/ambito autorizzato e controllo accessi; ora utente singolo.
+F vs A confronta sistemi completi, non isola l'effetto puro dell'agency. A vs W mantiene più componenti costanti e valuta la rappresentazione. Includere costo di compilazione/manutenzione, limiti di tool call, token e latenza; valutare una fonte cambiata. Non aspettarsi un vincitore universale: l'esito può favorire strategie diverse per compiti diversi.
 
-**E08:** replay prefissato con domande uniche, ripetizioni identiche, stessa frase in storie diverse, corpus e prompt cambiati. Misurare hit rate, tempo freddo/caldo, chiamate evitate, token effettivamente elaborati se disponibili, risposte obsolete servite. Cache risposta off per il benchmark qualità; cache embedding ammessa perché non evita decisioni valutate. Le repliche generative non devono riciclare la stessa risposta.
+Se il generatore locale non usa correttamente strumenti, separare limite del modello da valore dell'architettura; ridurre la dimostrazione e dichiararlo, senza fingere un confronto conclusivo.
 
-**E09:** piccolo set didattico di parafrasi equivalenti e coppie ingannevoli (stesso prodotto/data diversa, negazione, numeri diversi), con pochi giudizi verificati insieme. Soglia scelta su sviluppo, prova separata; cache popolata cronologicamente dalle risposte precedenti, mai da risposte gold del test. Riportare hit corretti, falsi hit, falsi miss e campione. Nessuna percentuale generale di risparmio da un replay composto solo da duplicati.
+## D5 — cache come decisione applicativa
 
-## M3 — ricerca agentica e LLM Wiki nello stesso esperimento
+Cache di embedding già necessaria a D1; più avanti risultati di ricerca e risposte. Chiavi con domanda/storia/config/corpus; invalidazione quando cambiano fonti o prompt. Scegliere cosa riusare in funzione di ripetizioni e aggiornamenti.
 
-MTRAG serve al recupero su passaggi; non attribuirgli una struttura documentale che non ha. **Collezione per M3:** selezione deterministica di circa 30 documenti sorgente FiQA, fissata indipendentemente dalle domande di test, conservando provenienza. Titoli/ID possono guidare ricerca e lettura; non inventare tassonomie usando le risposte. Se servono fonti con struttura naturale diversa, è una valutazione separata e va dichiarata.
+Replay con richieste uniche, ripetizioni, stessa frase in contesti diversi e fonte modificata. Misurare risparmio reale e risposte obsolete. Cache semantica separata e spenta per default: parafrasi vs domande simili ma non equivalenti per data/prodotto/negazione. Soglia su sviluppo; niente risposte gold precaricate. Cache risposta disattivata nel confronto di qualità fra architetture.
 
-Preparare 12–20 domande esplorative con evidenze disponibili, create dall'assistente o derivate da quelle ufficiali quando valide nel corpus ridotto. Andrea ne verifica solo un piccolo campione istruttivo. Nessuna conclusione quantitativa di correttezza complessiva senza giudizi sufficienti. Congelare sviluppo/test prima di ottimizzare le strategie; la selezione del corpus non dipende dai risultati. Dichiarare che non è il punteggio ufficiale MTRAG e che l'indipendenza del test interno è limitata.
+File/SQLite bastano al primo confronto; Redis è un adattatore eventuale, non la lezione centrale. Distinguere riuso di risposta, riuso di embedding e riuso del prefisso nel runtime. Non promettere risparmio di token per ogni cache.
 
-Tre condizioni minime, **stesso corpus originario e stesso generatore**:
+## D6 — fine-tuning con un'ipotesi
 
-- **F — RAG fisso:** ricerca selezionata in M1, contesto preparato in una passata, risposta.
-- **A — agente sui file:** `list_documents`, `search_text`, `read_document` con intervalli e limiti. Il modello sceglie cosa leggere e se cercare ancora. Niente shell generale, scrittura, web o annotazioni attese. Un'esperienza successiva può aggiungere `semantic_search`, ma non contaminare il primo confronto cambiando strumenti a metà.
-- **W — agente sulla wiki:** stessi tipi di strumenti e modello di A; cambia la rappresentazione navigata, costruita dalle sole fonti. Eventuale accesso agli originali uguale ed esplicito nella configurazione. Pagine di sintesi/concetti, indice e link a ID/versioni delle fonti. Costruzione senza domande, risposte attese o errori del test. Wiki congelata durante il test, niente apprendimento dalle domande precedenti.
+Discutere già in D1 quando può servire; non rimandare il concetto a fine corso. Pratica dopo diagnosi: il problema è conoscenza aggiornata, rappresentazione del dominio o comportamento/formato del generatore? Retrieval, preprocessing, reranker, prompting e training risolvono problemi differenti.
 
-A vs F confronta strategie end-to-end, includendo le differenze dei retriever. W vs A isola meglio l'effetto della rappresentazione. Non attribuire a una singola causa la differenza di due pipeline che cambiano più componenti. Le pagine wiki sono derivate e non possono essere trattate come nuove fonti indipendenti.
+Opzione pertinente: adattamento dell'encoder con coppie/triplette e negativi difficili, se esistono dati indipendenti e il pilot CPU lo consente. Nessuna promessa di training su questo portatile, niente cloud pagato. Separare training/dev/test per fonte/conversazione e registrare regressioni. Se resta solo studio, dichiarare conoscenza dei criteri, non esperienza pratica di training.
 
-Limiti pilota proposti: massimo 4 cicli modello/strumenti, 8 chiamate a strumenti, 5 minuti per task; stesso limite di output, tetto di contesto coerente con il modello, budget totale registrato. Controllare argomenti, file accessibili e limiti fuori dal prompt. Se il modello non produce tool call valide, provare al massimo una correzione/modello alternativo; poi ridurre a dimostrazione didattica, senza inventare una valutazione riuscita.
+## Evidenza professionale e documentazione
 
-**E10/E11:** confronto sulle stesse domande, cache risposte off; misurare riferimenti recuperati, supporto delle risposte valutate, passi, token/call e tempo. Per W aggiungere compilazione e manutenzione; non fingere che tutto il costo sia quello della query. Un eventuale pareggio economico dipende dal numero di domande e dai costi osservati, e può non esistere.
+La verifica non è scrivere una funzione a memoria. Andrea sa: formulare requisito; scegliere alternative; definire prova e costo accettabile; interpretare un fallimento; indicare la configurazione/codice che cambia il comportamento; spiegare limiti e quando sceglierebbe diversamente.
 
-**E12:** introdurre una modifica controllata a una fonte didattica/versione di test, etichettata come tale senza alterare il dataset ufficiale. Verificare aggiornamento indice, cache e pagine wiki dipendenti; interrogare la nuova versione e controllare che i riferimenti non puntino a una sintesi superata. Conservare i due snapshot. La prova riguarda manutenzione su scala piccola, non un sistema di conoscenza enterprise.
+Output per confronto: config e run generate automaticamente; scheda decisione breve; uno o due casi commentati; figura se aiuta. Report principale: problema applicativo → matrice delle scelte → confronti → errori → decisione per contesto → limiti. M1/M2/M3 sezioni dello stesso progetto; niente nuova documentazione duplicata per ogni tool.
 
-## Fine-tuning e fallback
+Un esito negativo è utile se la decisione è sostenuta dalle prove. Non dichiarare produzione, autonomia di implementazione, training o risultati mai verificati. I testi già pubblicati del sito non sono modificati in questa revisione.
 
-Lo studio concettuale U22 è incluso. L'addestramento reale è una mini-estensione separata se resta un problema di rappresentazione e ci sono esempi di training indipendenti. Prima: motivazione, corpus/split di training, criterio di successo, prova CPU di pochi passi, limite dedicato. Dopo: confronto col modello base su dati non usati nel training e controllo di regressione. Se non sostenibile, segnare «studiato, non eseguito», senza attribuire esperienza pratica.
+## Prossima sessione
 
-Il fallback B non diventa un quarto grande progetto: riusa M1 per misurare quantizzazione o un modello più leggero, eventualmente su un dataset piccolo diverso. La compressione dell'indice non risolve da sola la lentezza del generatore o dell'encoder. Conservare i risultati già utili e rivedere solo il modulo bloccato.
+**D1, non U01/U02.** Aprire con quattro esempi di richieste finanziarie (parafrasi, identificatore, condizione/numero, follow-up); spiegare cosa dovrebbe recuperare un sistema e perché non basta la vicinanza di tema. Presentare confronto MiniLM/BGE/BM25, decidere ipotesi con Andrea e preparare il primo pilot. L'assistente gestisce acquisizione e infrastruttura; mostra configurazioni e risultati, non un esercizio di file reading.
 
-## Documentazione e file: una sola fonte per ogni cosa
+## Fonti verificate il 12 settembre
 
-Piano corrente qui; stato e comprensione in HANDOVER; lezioni in percorso; esperimenti in esperimenti; misure in runs. Non duplicare la tabella del piano in tre file.
-
-Per ogni unità creare una nota al momento di affrontarla: problema, concetti, funzione esaminata, esercizio di Andrea, risultato, link alla run e dubbio residuo. Ogni esperimento usa `esperimenti/TEMPLATE.md`. I file delle run seguono `docs/DOCUMENTAZIONE.md`; includere stato cache, storia, versione corpus, modello, budget e tempi.
-
-Per ogni macroprogetto, alla chiusura: `report/m1-ricerca/report.md`, `report/m2-rag/report.md`, `report/m3-agent-wiki/report.md` con figure proprie e breve consegna. `report/report.md` sarà l'indice/sintesi dei risultati disponibili e `report/CONSEGNA.md` il punto unico per il sito. Creare questi file solo quando esistono risultati; niente scaffolding di report pieni di placeholder.
-
-Figure previste: U02 geometria didattica; M1 una domanda/tre classifiche e qualità-tempo; M2 due punti d'errore e cache con invalidazione; M3 lavoro prima/durante/dopo la domanda e risultato dopo aggiornamento. SVG o grafici generati dai dati, Mermaid per schemi, sempre fonte e didascalia. Due o tre figure informative per report possono bastare. Conservare sorgenti, controllare rendering e leggibilità prima della consegna. Nessun grafico numerico inventato.
-
-**Completamento:** ogni macroprogetto funziona nel perimetro dichiarato, ha risultati ricostruibili e Andrea sa spiegare e modificare i componenti principali. Feedback esterno, hosting pubblico, submission e fine-tuning non sono prerequisiti. Nessun contatto esterno da organizzare.
-
-## KodeKloud: supporto mirato
-
-Vedere `percorso/KODEKLOUD.md`. I laboratori servono per le basi e per esercitarsi senza copiare la soluzione di SOL. Nessun corso intero obbligatorio prima di cominciare; nessun abbonamento. Le note pubbliche AI sono riferimenti, non prova di accesso gratuito ai laboratori del corso completo.
-
-## Decisioni lasciate alla misura, non all'improvvisazione
-
-Prima U04: conteggi e split effettivi, licenze/revisioni; prima U11: modello generativo e contesto; prima U16: client e compatibilità Docker; prima U18: pilota tool calling e selezione corpus. Ogni scelta ha un punto preciso nel percorso; non servono ora date o prestazioni inventate. Restano i guardrail CPU di `docs/ARCHITETTURA.md`.
-
-Fonti tecniche consultate il 11 settembre 2026: [BGE small](https://huggingface.co/BAAI/bge-small-en-v1.5), [MiniLM reranker](https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2), [retrieve/rerank](https://www.sbert.net/examples/sentence_transformer/applications/retrieve_rerank/README.html), [semantic cache](https://redis.io/docs/latest/develop/use-cases/semantic-cache/), [llama.cpp](https://github.com/ggml-org/llama.cpp). Le matrici, soglie e campioni sono scelte progettuali nostre; nessuna dipendenza è stata installata.
+[MiniLM](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2), [BGE](https://huggingface.co/BAAI/bge-small-en-v1.5), [retrieve/rerank](https://www.sbert.net/examples/sentence_transformer/applications/retrieve_rerank/README.html), [limiti UMAP](https://umap-learn.readthedocs.io/en/latest/faq.html). Modelli e tool da validare nell'ambiente prima dell'uso; nessun nuovo esperimento eseguito in questa revisione.

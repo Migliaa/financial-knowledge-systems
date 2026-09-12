@@ -18,6 +18,8 @@ Andrea ha creato e fornito i due URL, autorizzando collegamento e caricamento. I
 
 ## M1 adesso
 
+**Revisione corrente:** il perimetro non è più completare U00–U09. Seguire D1/D2 del nuovo PIANO_MASTER e poi la baseline RAG D3 e confronto agenti/wiki D4, prima di eventuali esercizi API/database. Le indicazioni originarie sotto non impongono prerequisiti. Una repository rimane sufficiente.
+
 Ambito: U00–U09, comprensione del codice e confronto BM25/embedding/ibrida, reranking mirato e storia conversazionale. U10b Chroma appartiene all'ingresso successivo in M2. M1 si chiude con codice eseguibile, misure, errori e report; non aspetta generatore, API, cache, agenti o wiki.
 
 La cartella corrente è già il workspace di M1. Non creare ora tre cartelle di applicazioni vuote. Quando servono, introdurre `src/`, `tests/`, configurazioni e script secondo ARCHITETTURA. Report e schede mantengono gli ID già stabiliti; non rinumerare unità o duplicare il piano.
