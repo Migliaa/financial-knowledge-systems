@@ -34,6 +34,8 @@ Andrea ha studiato Appunti1/Appunti2, svolto U00 e affrontato U01 (conferma form
 
 ## Documentare senza duplicare
 
+Preferenza visiva obbligatoria: seguire `docs/PIANO_VISUALE.md` per la sola fase corrente. Spiegare attraverso schemi e confronti affiancati prima di aggiungere prosa; definire legenda e limiti. Preparare durante la prova la vista pertinente D1–D6, salvare dati/configurazione ed export riproducibile; interazione quando aiuta lo studio, figura statica autosufficiente per il report. Non assegnare screenshot manuali ad Andrea, non costruire tutte le dashboard in anticipo. Proiezioni embedding sempre accompagnate da ranking nello spazio originale; colori non sono evidenza di qualità. Figure finali poche e selezionate, stato in HANDOVER senza duplicare il catalogo.
+
 `percorso/` = studio; `esperimenti/` e `runs/` = prove; `report/` = racconto pubblico. Segui `docs/DOCUMENTAZIONE.md`. Figure esplicative riproducibili; esempi inventati e dati misurati sempre distinti. Non creare immagini decorative per riempire il report.
 
 Le verifiche delle competenze e l'uso esplicito degli strumenti sono in `percorso/COMPETENZE.md`; niente badge per dipendenze soltanto installate. L'11 settembre Andrea autorizza un mockup del sito in `mockup-portfolio/`, con testi τ²-bench e metodo invariati; questa richiesta prevale sul divieto storico di HTML. Non modificare il sito sorgente per propagare automaticamente il mockup. La pagina pubblica raggruppa M1/M2/M3 in un progetto, come definito in `docs/PORTFOLIO.md`.

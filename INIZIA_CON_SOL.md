@@ -1,5 +1,7 @@
 # Riprendere con Sol
 
+Istruzione aggiuntiva per ogni ripresa: seguire `docs/PIANO_VISUALE.md` per la fase corrente. Andrea preferisce schemi, confronti visivi e interazioni utili; generare e conservare durante gli esperimenti le figure da riusare nella documentazione. Il testo accompagna e interpreta, senza ripetere tutto il grafico.
+
 Nella stessa cartella rag, usare questo messaggio:
 
 > Riprendiamo da D1 del PIANO_MASTER aggiornato: design applicativo di embedding e retrieval. Leggi AGENTS e HANDOVER. Ho già studiato le basi; non voglio esercizi Python/JSONL né ripetere U00/U01. Spiegami alternative e compromessi su richieste finanziarie realistiche, poi prepariamo il confronto fra due encoder e BM25. Tu implementi l'infrastruttura; io devo capire, scegliere, interpretare e documentare. Mostrami solo il codice rilevante alle decisioni. Il dubbio U02 lo riprendiamo quando serve.

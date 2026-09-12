@@ -18,6 +18,7 @@ Andrea è l'utilizzatore. Ogni parte ha una consegna autonoma, riusa il lavoro p
 | Metodo didattico e corsi mirati | [Percorso](percorso/README.md), [KodeKloud](percorso/KODEKLOUD.md) |
 | Vincoli tecnici e controllo CPU | [Architettura](docs/ARCHITETTURA.md) |
 | Prove, report e figure | [Documentazione](docs/DOCUMENTAZIONE.md), [scheda esperimento](esperimenti/TEMPLATE.md) |
+| Studio visivo e figure per ogni fase | [Piano visuale D1–D6](docs/PIANO_VISUALE.md) |
 | Consegna della direzione alla centralina | [Nota pronta, non inviata](NOTA_CENTRALINA.md) |
 | Storia delle decisioni | [Diario](DIARIO.md), [analisi strategica precedente](STRATEGIA_PROFILO.md) |
 

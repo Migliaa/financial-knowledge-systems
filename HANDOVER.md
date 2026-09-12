@@ -21,6 +21,8 @@ U00 completata. U01 affrontata, con esercizio in percorso/u01; conferma formale 
 
 ## Metodo richiesto
 
+Andrea richiede apprendimento prevalentemente visivo. Applicare `docs/PIANO_VISUALE.md`: in D1 schema a due corsie V01, confronto classifiche V03 e mappa V02 collegata ai vicini originali, poi qualità/costi V05 quando misurati. Salvare viste ed export durante il lavoro, senza chiedergli screenshot manuali. Il catalogo D1–D6 è definito; nessuna nuova figura misurata è stata ancora prodotta. Preferire confronti affiancati, colori/legende e poche frasi; non scambiare cluster gradevoli per qualità retrieval.
+
 Spiegazione applicativa densa, alternative e schema, configurazione/codice rilevante, confronto, errori e decisione documentata. Definire i termini nuovi e ordinare i prerequisiti senza tono elementare. Non micro-domande né manuale teorico separato. Verificare che Andrea sappia motivare una scelta e cambiarla davanti ai dati; non chiedergli di riscrivere implementazioni generiche.
 
 L'IA può implementare tutta l'infrastruttura necessaria. Non scegliere tutte le architetture senza spiegare le decisioni ad Andrea. Responsabilità ingegneristica: controllare evidenza e limiti del sistema, anche se il codice è generato.

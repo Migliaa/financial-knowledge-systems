@@ -31,6 +31,8 @@ Per le prove cache registrare stato freddo/caldo, chiave/versioni, hit/miss, inv
 
 ## Figure che aggiungono informazione
 
+**Specifica corrente:** [PIANO_VISUALE](PIANO_VISUALE.md) definisce viste V01–V11, collegamento a D1–D6, convenzioni grafiche, cattura/export e selezione per il recruiter. Si applica durante lo studio: non attendere la scrittura del report. La tabella sotto resta un esempio, non il catalogo completo.
+
 La prima figura schematica è in `percorso/00-il-problema.md`. Le altre nascono quando servono a spiegare una domanda precisa. Una figura deve mostrare una relazione, un confronto o un errore che il testo da solo rende più faticoso capire.
 
 | Figura possibile | Informazione aggiunta | Quando crearla |
@@ -53,7 +55,7 @@ Una consegna per parte: `report/m1-ricerca/report.md`, `report/m2-rag/report.md`
 
 Sul sito le tre consegne diventano **un solo progetto con tre moduli**; la sintesi deve bastare per capire competenze, risultati e limiti. La separazione dei file non determina il numero delle sezioni pubbliche. Seguire [PORTFOLIO](PORTFOLIO.md) e [COMPETENZE](../percorso/COMPETENZE.md) per navigazione e dichiarazioni verificate.
 
-Non scrivere in anticipo una storia di miglioramento. Preparare il report quando esistono almeno prima misura e una diagnosi. Struttura: problema e domanda → banco di prova → confronto → errori che spiegano le scelte → risultato e limiti. Indicativamente 1.200–1.600 parole, ma la chiarezza prevale sul conteggio.
+Non scrivere in anticipo una storia di miglioramento. Preparare il report quando esistono almeno prima misura e una diagnosi. Struttura: problema e domanda → banco di prova → confronto → errori che spiegano le scelte → risultato e limiti. Preferire figure commentate e brevi conclusioni con rimandi diretti al metodo; nessuna lunghezza minima. Non ricopiare in prosa ciò che la figura rende già chiaro.
 
 `report/CONSEGNA.md` elenca materiali, sintesi home, figure, approfondimenti e stato editoriale. La sessione del sito riceve report e consegna, non diario/studio. Dati e codice riproducibili accessibili separatamente; verificare cosa è redistribuibile prima di pubblicarlo. Questo progetto non cambia l'HTML del portfolio.
 

@@ -22,6 +22,8 @@ Il mini-dossier sarà condiviso da RAG, agent file search e wiki; selezione e do
 
 ## Metodo di lavoro per ogni decisione
 
+Applicare il [piano visuale](docs/PIANO_VISUALE.md): D1 V01–V03/V05; D2 V03–V05; D3 V06/V05; D4 V07–V08/V05; D5 V09; D6 V10 condizionale. V11 sintetizza le decisioni. Sono viste riutilizzabili da scegliere in base alla domanda, non undici consegne obbligatorie. Schema prima del confronto, evidenza visiva durante la prova, export e breve interpretazione alla chiusura. Meno prosa, legende esplicite, colori coerenti.
+
 1. Mostrare una domanda realistica e il problema che pone.
 2. Spiegare due o tre alternative pertinenti, i meccanismi e i compromessi con uno schema quando utile.
 3. Andrea formula una scelta e cosa si aspetta di osservare, senza quiz sulla sintassi.
