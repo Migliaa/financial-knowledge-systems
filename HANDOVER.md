@@ -41,4 +41,6 @@ La versione precedente del piano è in docs/archivio. La nuova sequenza è D1–
 
 ## Chiusura
 
+Regole editoriali e pacchetto per il sito ora espliciti in `docs/DOCUMENTAZIONE.md`: passaggi progettuali brevi con figure, scelte/evidenza/limiti, lessico umano senza enfasi; export in `report/figure/<fig_id>/`, indice e CONSEGNA unici quando pronti. Nessuna consegna automatica tra sessioni. Prossimo passo didattico resta D1; non esistono ancora risultati da impaginare.
+
 Aggiornare qui decisione corrente, ciò che Andrea sa spiegare e prossimo confronto; una riga nel DIARIO e scheda/nota coinvolta. Nessun nuovo handover parallelo. Prompt di ripresa in [INIZIA_CON_SOL](INIZIA_CON_SOL.md).

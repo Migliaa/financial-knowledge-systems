@@ -49,7 +49,45 @@ Per ogni figura conservare in `report/figure/INDEX.md`, quando nasce la prima fi
 
 Prima della consegna, renderizzare e guardare ogni figura a dimensione reale e ridotta: testo leggibile, niente tagli, unità esplicite, colori distinguibili, eventuale incertezza e denominatori. Conservare sorgente modificabile oltre all'esportazione. Le figure non ancora verificate non sono pronte per il sito.
 
-## Pubblicazione
+## Voce editoriale e percorsi a passaggi
+
+Priorità di Andrea: linguaggio umano, breve e concettuale. Mostrare il problema, il confronto e la decisione attraverso figure e fatti. Il livello pubblico spiega il design; dettagli di implementazione, parametri e codice restano negli approfondimenti collegati. Queste regole valgono anche per titoli, didascalie e testi consegnati al sito.
+
+- Scrivere con verbi concreti: «ho confrontato», «ho scelto», «ho escluso», «il test mostra». Prima persona solo per attività effettive di Andrea; distinguere implementazione assistita e comprensione verificata. Non attribuirgli scelte che non ha ancora discusso.
+- Ogni frase deve aggiungere problema, evidenza, scelta o limite. Eliminare preamboli, ripetizioni, enfasi e autoelogi: «è fondamentale sottolineare», «soluzione innovativa», «potente», «rivoluzionario», «dimostra la mia solida competenza». Niente conclusioni di rito o contrasti artificiosi del tipo «non è X, è Y».
+- Conservare i nomi utili a riconoscere le tecnologie, spiegandoli alla prima occorrenza: «ricerca ibrida, che combina parole chiave e similarità». Non sostituire precisione con slogan. Librerie e versioni compaiono dove spiegano una scelta o rendono la prova riproducibile.
+- Scrivere «in queste domande / con queste fonti» quando il risultato è circoscritto. Evitare «migliore» senza criterio e confronto. Separare ciò che osserviamo dalla spiegazione ipotizzata; non nascondere limiti per rendere più incisiva la pagina.
+- Una figura non richiede un paragrafo che ne legga tutti i numeri. Didascalia: cosa confronta e su quali dati; testo vicino: scelta e limite. Esempi didattici etichettati, nessun numero inventato per completare la narrazione.
+
+Esempio di forma, non risultato del progetto: invece di «Abbiamo implementato un sofisticato sistema di retrieval per ottimizzare le prestazioni», scrivere «Ho confrontato ricerca per parole e ricerca per significato. La figura mostra quali fonti recuperano sulla stessa domanda». Aggiungere la decisione solo quando le prove la sostengono.
+
+Per ciascun modulo, il report pubblico è una sequenza di passaggi progettuali, non il diario delle lezioni U/D. Indicativamente 3–5 passaggi, accorpabili quando la storia è più semplice:
+
+1. Il problema da risolvere e il criterio di riuscita.
+2. Le alternative confrontate sullo stesso caso.
+3. La prova che cambia o conferma la scelta.
+4. La soluzione scelta, il compromesso e quando scegliere diversamente.
+
+Ogni passaggio ha un ID/ancora stabile, un titolo concreto, poche frasi, una figura pertinente se disponibile e un link diretto alla prova. Non imporre una figura per riempire ogni passaggio. Il visitatore può scorrere la sintesi senza aprire appunti o log; metodo, codice e studio sono approfondimenti facoltativi. I passaggi vengono ricavati da risultati reali, non scritti in anticipo come storia di successo.
+
+## Pacchetto di consegna alla sessione del sito
+
+Crearlo progressivamente quando esistono risultati. Una sola `report/CONSEGNA.md`, con:
+
+| Campo | Contenuto necessario |
+|---|---|
+| Revisione e perimetro | Commit o revisione dei file, moduli pronti, esclusioni e punti da rivedere |
+| Sintesi pubblica | Problema, scelta, risultato e limite in poche frasi; competenze dimostrate collegate alle prove, future ancora marcate |
+| Percorso | Ordine dei passaggi, titolo e ancora; link alla sezione del report, senza ricopiarne il testo |
+| Figure | ID e percorsi di SVG/PNG, eventuale HTML interattivo, didascalia e testo alternativo tramite `report/figure/INDEX.md` |
+| Evidenza | Collegamenti a esperimenti/run/codice e file necessari, accessibili anche fuori dalla macchina di Andrea |
+| Verifica | Stato editoriale e visuale; licenze/provenienza controllate, numeri verificati, limiti aperti |
+
+Gli export selezionati per il sito vanno in `report/figure/<fig_id>/`; l'indice conserva il riferimento ai dati e sorgenti originali, che restano in `runs/`, `scripts/figures/` o `percorso/figure/`. Copiare qui soltanto gli export pubblicabili, senza duplicare dataset e run. Ogni percorso nella consegna è relativo alla repository: niente collegamenti validi solo sul PC locale. Includere tutti gli asset indispensabili; se dati grandi/licenze impediscono l'inclusione, fornire istruzioni di recupero e hash e indicare il limite. Il sito deve poter mostrare le figure statiche senza avviare modelli o ricostruire gli esperimenti.
+
+Prima di dichiarare la consegna pronta, aprire report ed export, verificare link e dipendenze, controllare i testi contro le prove ed eliminare frasi prive di contenuto. La sessione del sito legge prima CONSEGNA, poi soltanto i report e gli asset indicati: non deve ricostruire le decisioni dalla chat o dal diario. Le consegne non vengono inviate automaticamente ad altre sessioni; Andrea può chiedere di leggerle nella stessa repository o indicarne la revisione Git.
+
+## Organizzazione della pubblicazione
 
 Una consegna per parte: `report/m1-ricerca/report.md`, `report/m2-rag/report.md`, `report/m3-agent-wiki/report.md`. `report/report.md` ne sarà l'ingresso comune, senza ricopiare i risultati. Un'unica `report/CONSEGNA.md` chiarirà cosa è pronto per il sito. Nessun report vuoto o con miglioramenti promessi. Studio e appunti tecnici restano separati e collegabili come approfondimenti.
 

@@ -34,6 +34,8 @@ Andrea ha studiato Appunti1/Appunti2, svolto U00 e affrontato U01 (conferma form
 
 ## Documentare senza duplicare
 
+Per testi pubblici e consegna applicare le sezioni «Voce editoriale e percorsi a passaggi» e «Pacchetto di consegna» in `docs/DOCUMENTAZIONE.md`: linguaggio umano, breve, concettuale, senza enfasi o autoelogi; problema → confronto → evidenza → scelta e limite. Figure centrali, tecnicismi negli approfondimenti. Preparare passaggi con ancore stabili, export selezionati in `report/figure/<fig_id>/` e indice unico; `report/CONSEGNA.md` guida la futura sessione del sito senza dipendere dalla chat. Non creare consegne vuote né dichiarare competenze non verificate.
+
 Preferenza visiva obbligatoria: seguire `docs/PIANO_VISUALE.md` per la sola fase corrente. Spiegare attraverso schemi e confronti affiancati prima di aggiungere prosa; definire legenda e limiti. Preparare durante la prova la vista pertinente D1–D6, salvare dati/configurazione ed export riproducibile; interazione quando aiuta lo studio, figura statica autosufficiente per il report. Non assegnare screenshot manuali ad Andrea, non costruire tutte le dashboard in anticipo. Proiezioni embedding sempre accompagnate da ranking nello spazio originale; colori non sono evidenza di qualità. Figure finali poche e selezionate, stato in HANDOVER senza duplicare il catalogo.
 
 `percorso/` = studio; `esperimenti/` e `runs/` = prove; `report/` = racconto pubblico. Segui `docs/DOCUMENTAZIONE.md`. Figure esplicative riproducibili; esempi inventati e dati misurati sempre distinti. Non creare immagini decorative per riempire il report.

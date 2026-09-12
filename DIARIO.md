@@ -1,5 +1,7 @@
 # Diario — RAG
 
+- **2026-09-12 — Contratto editoriale e consegna al sito.** Esplicitati lessico umano e concettuale, eliminazione di enfasi/autoelogi, passaggi progettuali con ancore, prova e limite; export pubblicabili raccolti e indice/consegna unici con revisione e verifiche. Collegato alle istruzioni e alla ripresa. Nessun report vuoto, modifica al sito o invio ad altre sessioni; prossimo passo D1.
+
 - **2026-09-12 — Percorso visuale integrato.** Su richiesta di Andrea: catalogo V01–V11 per D1–D6, schemi e viste di evidenza, mappe embedding con ranking originale, confronti RAG, tracce agente/wiki, aggiornamenti/cache e fine-tuning condizionale. Definiti colori/legende, manifest ed export riproducibili, selezione sintetica per recruiter. Collegato a istruzioni, piano e ripresa; preferenza per figure commentate anziché report lungo. Fonti ufficiali t-SNE/UMAP consultate per limiti interpretativi. Nessuna misura o figura di risultati inventata; sito invariato, prossimo passo D1.
 
 - **2026-09-12 — Mockup V3 allineato al design applicativo.** Su richiesta: sei aree di competenza, stack separato e opzionale dove pertinente, fine-tuning come decisione da studiare con pratica eventuale. M1–M3 prima di τ², registro assente dal sito navigabile, contenuti protetti identici. Anteprima 4174 inattiva: riavviata con no-store e versione visibile. Nessuna nuova competenza acquisita o lezione svolta; prossimo passo D1.
